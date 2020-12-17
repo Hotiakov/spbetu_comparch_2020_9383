@@ -15,6 +15,7 @@ mov esi, LGrInt ;массив левых границ
 change_interval:
     mov eax, [esi]
     sub eax, Xmin
+    inc eax
     mov [esi], eax
     add esi, 4
     loop change_interval
