@@ -2,7 +2,7 @@
 .MODEL FLAT, C
 .CODE
 PUBLIC C module_2
-module_2 PROC C mass_after_module1: dword, NumRatDat: dword, mass_after_module2: dword, Xmin: dword, LGrInt: dword, Nint: dword
+module_2 PROC C mass_after_module1: dword, NumRatDat: dword, mass_after_module2: dword, Xmax: dword, LGrInt: dword, Nint: dword
 
 push esi
 push edi
@@ -11,11 +11,11 @@ mov edi, mass_after_module1 ;исходный массив
 mov ecx, Nint  ;количество интервалов
 mov esi, LGrInt ;массив левых границ
 
-
 change_interval:
     mov eax, [esi]
-    sub eax, Xmin
-    inc eax
+    add eax, Xmax
+    ;sub eax, Xmin
+    ;inc eax
     mov [esi], eax
     add esi, 4
     loop change_interval

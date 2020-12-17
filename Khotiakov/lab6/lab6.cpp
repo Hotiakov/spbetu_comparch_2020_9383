@@ -65,13 +65,13 @@ int main(){
     for (int i = 0; i < Nint + 1; i++) {
         mass_after_module2[i] = 0;
     }
-    module_2(mass_after_module1, NumRatDat, mass_after_module2, Xmin, LGrInt, Nint);
+    module_2(mass_after_module1, NumRatDat, mass_after_module2, Xmax, LGrInt, Nint);
 
     cout << "Распределение после работы первого модуля: \n";
     out << "Распределение после работы первого модуля: \n";
-    for(int i = 0; i < Nint; i++){
-            cout << "Инт№" << i << "\tЛевая граница:" << LGrInt2[i] << "\tКоличество чисел:" <<  mass_after_module2[i] << '\n';
-            out << "Инт№" << i << "\tЛевая граница:" << LGrInt2[i] << "\tКоличество чисел:" <<  mass_after_module2[i] << '\n';		
+    for(int i = 1; i < Nint+1; i++){
+            cout << "Инт№" << i << "\tЛевая граница:" << LGrInt2[i-1] << "\tКоличество чисел:" <<  mass_after_module2[i] << '\n';
+            out << "Инт№" << i << "\tЛевая граница:" << LGrInt2[i-1] << "\tКоличество чисел:" <<  mass_after_module2[i] << '\n';		
     }
     return 0;
 }
